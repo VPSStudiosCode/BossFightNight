@@ -7,18 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="panel">
-    <h1>Friday Night Boss Fight</h1>
-    <p>Welcome, follower! Your loyalty has earned you backup privileges.</p>
-    <p>🧠 Only the brave queue up. 2 slots available.</p>
-    <p>Want to skip the line? <a href="https://ko-fi.com/VirtualPixelShow" target="_blank">Send Noods 👉</a></p>
+  <h2>🧠 Friday Night Boss Fight Queue</h2>
 
-    <div class="queue">
-      <button onclick="joinQueue()">Join the Backup Squad</button>
-      <button onclick="leaveQueue()">Leave Queue</button>
-      <p id="queueStatus">Queue: [empty]</p>
-    </div>
-  </div>
-  <script src="script.js"></script>
+<div id="queue-container">
+  <button onclick="joinQueue('Viewer123')">Join Queue</button>
+  <button onclick="leaveQueue('Viewer123')">Leave Queue</button>
+  <button onclick="kofiBoost('Viewer123')">Send Noods (Ko-fi Boost)</button>
+  
+  <h3>Current Queue:</h3>
+  <pre id="queueList">Nobody yet. Be brave!</pre>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
