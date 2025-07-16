@@ -1,23 +1,32 @@
 
 let queue = [];
+const maxPlayers = 2;
 
-function joinQueue() {
-  const username = "Viewer" + Math.floor(Math.random() * 1000); // placeholder for Twitch auth
-  if (!queue.includes(username) && queue.length < 2) {
+function joinQueue(username) {
+  if (!queue.includes(username) && queue.length < maxPlayers) {
     queue.push(username);
     updateQueueDisplay();
   } else {
-    alert("Queue full or you're already in!");
+    alert("Queue is full or you're already in!");
   }
 }
 
-function leaveQueue() {
-  const username = queue[0]; // placeholder for viewer's name
-  queue = queue.filter(name => name !== username);
+function leaveQueue(username) {
+  queue = queue.filter(player => player !== username);
+  updateQueueDisplay();
+}
+
+function kofiBoost(username) {
+  queue = queue.filter(player => player !== username);
+  queue.unshift(username);
   updateQueueDisplay();
 }
 
 function updateQueueDisplay() {
-  const queueStatus = document.getElementById("queueStatus");
-  queueStatus.textContent = "Queue: " + (queue.length ? queue.join(", ") : "[empty]");
+  const queueList = document.getElementById("queueList");
+  if (queue.length === 0) {
+    queueList.textContent = "Nobody yet. Be brave!";
+  } else {
+    queueList.textContent = queue.map((name, i) => `${i + 1}. ${name}`).join('\n');
+  }
 }
