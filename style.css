@@ -173,3 +173,38 @@ body.vhs-glitch {
   80% { transform: skew(-0.5deg); }
   100% { transform: none; }
 }
+
+body.vhs-glitch::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 0, 255, 0.03),
+    rgba(0, 255, 255, 0.03) 2px,
+    transparent 4px,
+    transparent 6px
+  );
+  z-index: 998;
+  pointer-events: none;
+  animation: colorTear 0.3s infinite;
+}
+
+@keyframes colorTear {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
