@@ -1,63 +1,123 @@
-h1.glitch {
+body {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  padding: 40px;
+  overflow-x: hidden;
   position: relative;
+}
+
+h1 {
   font-family: 'Press Start 2P', monospace;
   font-size: 2em;
   color: #e67edc;
   text-shadow: 0 0 6px #e67edc, 0 0 12px #ff80ff, 0 0 24px #ff8ccf;
   margin-bottom: 0.5em;
-  animation: glitch 1.2s infinite;
-  text-align: center;
-  display: inline-block;
+  animation: glitch 2s infinite;
 }
 
-/* Centering the glitch text block */
-.centered {
-  text-align: center;
-}
-
-/* Glitch layers */
-h1.glitch::before,
-h1.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: inherit;
-  font-family: inherit;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-h1.glitch::before {
-  color: #00f0ff;
-  z-index: -1;
-  animation: glitchTop 1.2s infinite linear alternate-reverse;
-}
-
-h1.glitch::after {
-  color: #ff00c8;
-  z-index: -2;
-  animation: glitchBot 1.2s infinite linear alternate-reverse;
-}
-
-/* Glitch animations */
 @keyframes glitch {
-  0% { transform: none; }
-  20% { transform: translate(1px, -1px); }
-  40% { transform: translate(-1px, 1px); }
-  60% { transform: translate(1px, 1px); }
-  80% { transform: translate(-1px, -1px); }
-  100% { transform: none; }
+  0% {
+    text-shadow: 0 0 2px #ff00c8, 0 0 5px #ff00c8, 0 0 10px #00f0ff;
+    transform: translate(0);
+  }
+  20% {
+    text-shadow: 2px 2px #ff00c8, -2px -2px #00f0ff;
+    transform: translate(1px, -1px);
+  }
+  40% {
+    text-shadow: -2px -2px #ff00c8, 2px 2px #00f0ff;
+    transform: translate(-1px, 1px);
+  }
+  60% {
+    text-shadow: 0 0 6px #ff8ccf, 0 0 12px #00f0ff;
+    transform: translate(0.5px, -0.5px);
+  }
+  80% {
+    text-shadow: 0 0 8px #ff00c8;
+    transform: translate(-0.5px, 0.5px);
+  }
+  100% {
+    text-shadow: 0 0 6px #e67edc;
+    transform: translate(0);
+  }
 }
-@keyframes glitchTop {
-  0% { clip-path: inset(0 0 80% 0); transform: translate(2px, -2px); }
-  50% { clip-path: inset(20% 0 40% 0); transform: translate(-2px, 2px); }
-  100% { clip-path: inset(60% 0 0 0); transform: translate(1px, -1px); }
+
+h3 {
+  color: #00f0ff;
+  text-shadow: 0 0 6px #00f0ff;
 }
-@keyframes glitchBot {
-  0% { clip-path: inset(80% 0 0 0); transform: translate(-2px, 0); }
-  50% { clip-path: inset(40% 0 20% 0); transform: translate(2px, -1px); }
-  100% { clip-path: inset(0 0 60% 0); transform: translate(-1px, 1px); }
+
+a {
+  color: #ffb3ec;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff80ff;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 20px;
+  background: #ff8ccf;
+  color: #0a0a0a;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #ff8ccf;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Press Start 2P', monospace;
+}
+
+button:hover {
+  background: #00f0ff;
+  color: #000;
+  box-shadow: 0 0 12px #00f0ff;
+}
+
+#queue-container {
+  border: 3px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  position: relative;
+  background: #111;
+  color: #fff;
+  animation: neon-border 3s linear infinite;
+  box-shadow: 0 0 15px #ff8ccf;
+}
+
+@keyframes neon-border {
+  0% {
+    box-shadow: 0 0 10px #00f0ff;
+    border-color: #ff8ccf;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff8ccf;
+    border-color: #00f0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #00f0ff;
+    border-color: #ff8ccf;
+  }
+}
+
+#queueList {
+  background: #111;
+  color: #e0e0e0;
+  padding: 20px;
+  border: 1px solid #ff8ccf;
+  margin-top: 20px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  box-shadow: 0 0 10px #ff8ccf;
+}
+
+.queue {
+  margin-top: 30px;
 }
