@@ -7,10 +7,11 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2em;
   color: #e67edc; /* Neon Orchid Pink */
-  text-shadow: 0 0 10px #e67edc, 0 0 20px #ff80ff;
-  margin-bottom: 0.3em;
+  text-shadow: 0 0 6px #e67edc, 0 0 12px #ff80ff, 0 0 24px #ff8ccf;
+  margin-bottom: 0.5em;
 }
 
 h3 {
