@@ -64,3 +64,40 @@ button:hover {
   margin-top: 30px;
 }
 
+@keyframes glitch {
+  0% {
+    text-shadow: 0 0 2px #ff00c8, 0 0 5px #ff00c8, 0 0 10px #00f0ff;
+    transform: translate(0);
+  }
+  20% {
+    text-shadow: 2px 2px #ff00c8, -2px -2px #00f0ff;
+    transform: translate(1px, -1px);
+  }
+  40% {
+    text-shadow: -2px -2px #ff00c8, 2px 2px #00f0ff;
+    transform: translate(-1px, 1px);
+  }
+  60% {
+    text-shadow: 0 0 6px #ff8ccf, 0 0 12px #00f0ff;
+    transform: translate(0.5px, -0.5px);
+  }
+  80% {
+    text-shadow: 0 0 8px #ff00c8;
+    transform: translate(-0.5px, 0.5px);
+  }
+  100% {
+    text-shadow: 0 0 6px #e67edc;
+    transform: translate(0);
+  }
+}
+
+h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2em;
+  color: #e67edc;
+  text-shadow: 0 0 6px #e67edc, 0 0 12px #ff80ff, 0 0 24px #ff8ccf;
+  margin-bottom: 0.5em;
+  animation: glitch 2s infinite;
+}
+
+
