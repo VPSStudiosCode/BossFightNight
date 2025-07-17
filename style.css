@@ -161,3 +161,15 @@ body::after {
 }
 
 
+body.vhs-glitch {
+  animation: vhsGlitch 0.15s infinite;
+}
+
+@keyframes vhsGlitch {
+  0% { transform: skew(-1deg); }
+  20% { transform: skew(1deg); }
+  40% { transform: translateX(-1px); }
+  60% { transform: translateX(1px); }
+  80% { transform: skew(-0.5deg); }
+  100% { transform: none; }
+}
