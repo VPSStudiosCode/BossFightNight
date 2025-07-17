@@ -100,4 +100,31 @@ h1 {
   animation: glitch 2s infinite;
 }
 
+#queue-container {
+  border: 3px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  position: relative;
+  background: #111;
+  color: #fff;
+  animation: neon-border 3s linear infinite;
+  box-shadow: 0 0 15px #ff8ccf;
+}
+
+@keyframes neon-border {
+  0% {
+    box-shadow: 0 0 10px #00f0ff;
+    border-color: #ff8ccf;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff8ccf;
+    border-color: #00f0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #00f0ff;
+    border-color: #ff8ccf;
+  }
+}
+
 
