@@ -30,3 +30,11 @@ function updateQueueDisplay() {
     queueList.textContent = queue.map((name, i) => `${i + 1}. ${name}`).join('\n');
   }
 }
+
+document.getElementById('vhsToggle').addEventListener('click', function () {
+  document.body.classList.toggle('vhs-glitch');
+  this.textContent = document.body.classList.contains('vhs-glitch') 
+    ? '💥 VHS Mode: ON' 
+    : '💥 VHS Mode: OFF';
+});
+
