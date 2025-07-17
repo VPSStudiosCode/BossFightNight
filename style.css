@@ -1,42 +1,48 @@
-body {
-  background-color: #0a0a0a;
-  color: #fff;
-  font-family: 'Press Start 2P', monospace;
-  position: relative;
-  overflow-x: hidden;
-  animation: colorTear 0.3s infinite;
-}
-
-/* Headline Glitch Effect */
 h1.glitch {
   position: relative;
+  font-family: 'Press Start 2P', monospace;
   font-size: 2em;
   color: #e67edc;
   text-shadow: 0 0 6px #e67edc, 0 0 12px #ff80ff, 0 0 24px #ff8ccf;
+  margin-bottom: 0.5em;
   animation: glitch 1.2s infinite;
-  overflow: hidden;
+  text-align: center;
+  display: inline-block;
 }
+
+/* Centering the glitch text block */
+.centered {
+  text-align: center;
+}
+
+/* Glitch layers */
 h1.glitch::before,
 h1.glitch::after {
   content: attr(data-text);
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  overflow: hidden;
+  text-align: center;
+  font-size: inherit;
+  font-family: inherit;
+  pointer-events: none;
+  white-space: nowrap;
 }
+
 h1.glitch::before {
-  top: -2px;
   color: #00f0ff;
   z-index: -1;
   animation: glitchTop 1.2s infinite linear alternate-reverse;
 }
+
 h1.glitch::after {
-  top: 2px;
   color: #ff00c8;
   z-index: -2;
   animation: glitchBot 1.2s infinite linear alternate-reverse;
 }
 
+/* Glitch animations */
 @keyframes glitch {
   0% { transform: none; }
   20% { transform: translate(1px, -1px); }
