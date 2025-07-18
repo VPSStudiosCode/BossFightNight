@@ -13,7 +13,7 @@
 <body>
   <h1>🎮 Friday Night Boss Fight 🎮</h1>
   <h3>Welcome, follower! Your loyalty has earned you backup privileges.</h3>
-  <p>🧠 Only the brave queue up. 2 slots available.</p>
+  <p> Only the brave queue up. 2 slots available.</p>
   <p>Want to skip the line? <a href="https://ko-fi.com/VirtualPixelShow" target="_blank">Send Noods</a></p>
 
   <div id="queue-container">
@@ -25,8 +25,19 @@
     <button onclick="joinQueue('Player2')">Join as Player 2</button>
     <button onclick="leaveQueue('Player1')">Leave as Player 1</button>
     <button onclick="leaveQueue('Player2')">Leave as Player 2</button>
-    <button onclick="kofiBoost('Player2')">Boost Player 2 (Ko-fi)</button>
+  <button onclick="boostFirstPlayer()">Skip the Line</button>
   </div>
+
+  <div id="queue-rules">
+  <h3>Queue Rules</h3>
+  <ul>
+    <li>Max 2 players allowed in the queue at a time.</li>
+    <li>Inactive players will be removed after 10 minutes.</li>
+    <li>Click “Step Out of Line” to leave the queue manually.</li>
+    <li>Use “Skip the Line” if you’ve supported via Ko-fi!</li>
+  </ul>
+</div>
+
 
   <script src="script.js"></script>
 </body>
