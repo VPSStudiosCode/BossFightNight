@@ -10,12 +10,14 @@ body {
 
 h1 {
   font-family: 'Press Start 2P', monospace;
-  font-size: 2em;
+  font-size: clamp(1.2rem, 5vw, 2.5rem);
   color: #e67edc;
   text-shadow: 0 0 6px #e67edc, 0 0 12px #ff80ff, 0 0 24px #ff8ccf;
   margin-bottom: 0.5em;
   animation: glitch 2s infinite;
+  word-wrap: break-word;
 }
+
 
 @keyframes glitch {
   0% {
@@ -120,4 +122,10 @@ button:hover {
 
 .queue {
   margin-top: 30px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
 }
