@@ -4,16 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Friday Night Boss Fight</title>
-  <link rel="stylesheet" href="style.css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎮 Friday Night Boss Fight 🎮</h1>
+  <!-- Matrix Background -->
+  <canvas id="matrix-bg"></canvas>
+
+  <h1>🎮 Boss Fight Night 🎮</h1>
   <h3>Welcome, follower! Your loyalty has earned you backup privileges.</h3>
-  <p> Only the brave queue up. 2 slots available.</p>
+  <p>Only the brave queue up. 2 slots available.</p>
   <p>Want to skip the line? <a href="https://ko-fi.com/VirtualPixelShow" target="_blank">Send Noods</a></p>
 
   <div id="queue-container">
@@ -21,24 +26,34 @@
       <h3>Queue:</h3>
       <pre id="queueList">Nobody yet. Be brave!</pre>
     </div>
-    <button onclick="joinQueue('Player1')">Join as Player 1</button>
-    <button onclick="joinQueue('Player2')">Join as Player 2</button>
-    <button onclick="leaveQueue('Player1')">Leave as Player 1</button>
-    <button onclick="leaveQueue('Player2')">Leave as Player 2</button>
-  <button onclick="boostFirstPlayer()">Skip the Line</button>
+
+    <button onclick="joinQueue()">Join the Queue</button>
+    <button onclick="leaveQueue()">Leave the Queue</button>
+    <button onclick="boostQueue()">Skip the Line (Ko-fi)</button>
+    <p id="warningMessage"></p>
   </div>
 
-  <div id="queue-rules">
-  <h3>Queue Rules</h3>
-  <ul>
-    <li>Max 2 players allowed in the queue at a time.</li>
-    <li>Inactive players will be removed after 10 minutes.</li>
-    <li>Click “Step Out of Line” to leave the queue manually.</li>
-    <li>Use “Skip the Line” if you’ve supported via Ko-fi!</li>
-  </ul>
+  <div id="volume-control">
+  <label for="bgm-volume">🎵 Music Volume</label>
+  <input type="range" id="bgm-volume" min="0" max="100" value="20">
 </div>
 
 
+  <div id="queue-rules">
+    <h3>Queue Rules</h3>
+    <ul>
+      <li>Max 2 players allowed in the queue at a time.</li>
+      <li>Inactive players will be removed after 10 minutes.</li>
+      <li>Click “Step Out of Line” to leave the queue manually.</li>
+      <li>Use “Skip the Line” if you’ve supported via Ko-fi!</li>
+    </ul>
+  </div>
+
+  <!-- Script -->
   <script src="script.js"></script>
+
+  <p> Built by <a href="https://twitch.tv/VirtualPixelShow" target="_blank"><strong>🎀VirtualPixelShow</strong></a> </p>
+
+
 </body>
 </html>
