@@ -179,11 +179,4 @@ document.addEventListener("click", () => {
 }, { once: true }); // only trigger on the first click
 
 
-setInterval(() => {
-  if (!document.getElementById('credit')) {
-    const footer = document.createElement("footer");
-    footer.id = "credit";
-    footer.innerHTML = `Built by <a href="https://twitch.tv/🎀VirtualPixelShow" target="_blank"><strong>VirtualPixelShow</strong></a>;
-    document.body.appendChild(footer);
-  }
-}, 3000); // Every 3 seconds
+
