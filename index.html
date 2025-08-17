@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ✅ Proper <head> restored -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Friday Night Boss Fight</title>
@@ -13,47 +14,58 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Matrix Background -->
+  <!-- 🔢 Matrix Background should be early in body so the canvas sits behind everything -->
   <canvas id="matrix-bg"></canvas>
 
-  <h1>🎮 Boss Fight Night 🎮</h1>
+  <!-- 🏷 Title -->
+  <h1>🎮 Friday Night Boss Fight 🎮</h1>
+
+  <!-- 🧾 Intro copy (single set; duplicates removed) -->
   <h3>Welcome, follower! Your loyalty has earned you backup privileges.</h3>
   <p>Only the brave queue up. 2 slots available.</p>
-  <p>Want to skip the line? <a href="https://ko-fi.com/VirtualPixelShow" target="_blank">Send Noods</a></p>
+  <p>Want to skip the line?
+    <a id="kofi-link" href="https://ko-fi.com/VirtualPixelShow" target="_blank">Send Noods</a>
+  </p>
 
+  <!-- 📋 Queue UI -->
   <div id="queue-container">
     <div class="queue">
       <h3>Queue:</h3>
       <pre id="queueList">Nobody yet. Be brave!</pre>
     </div>
 
+    <!-- 🎮 Buttons (use ONE set) -->
     <button onclick="joinQueue()">Join the Queue</button>
     <button onclick="leaveQueue()">Leave the Queue</button>
     <button onclick="boostQueue()">Skip the Line (Ko-fi)</button>
+
+    <!-- ⚠️ Warning area for full-queue / inactivity warnings -->
     <p id="warningMessage"></p>
   </div>
 
+  <!-- 🎚 Music volume control -->
   <div id="volume-control">
-  <label for="bgm-volume">🎵 Music Volume</label>
-  <input type="range" id="bgm-volume" min="0" max="100" value="20">
-</div>
+    <label for="bgm-volume">🎵 Music Volume</label>
+    <input type="range" id="bgm-volume" min="0" max="100" value="20">
+  </div>
 
-
+  <!-- 📜 Queue Rules (single block; duplicate removed) -->
   <div id="queue-rules">
     <h3>Queue Rules</h3>
     <ul>
       <li>Max 2 players allowed in the queue at a time.</li>
       <li>Inactive players will be removed after 10 minutes.</li>
-      <li>Click “Step Out of Line” to leave the queue manually.</li>
+      <li>Click “Leave the Queue” to step out manually.</li>
       <li>Use “Skip the Line” if you’ve supported via Ko-fi!</li>
     </ul>
   </div>
 
-  <!-- Script -->
+  <!-- 🧠 Script (keep as last thing before footer so DOM exists when JS runs) -->
   <script src="script.js"></script>
 
-  <p> Built by <a href="https://twitch.tv/VirtualPixelShow" target="_blank"><strong>🎀VirtualPixelShow</strong></a> </p>
-
-
+  <!-- 🖋 Branded footer (no lock here; pure display) -->
+  <footer id="credit">
+    <p>Built by <a href="https://twitch.tv/VirtualPixelShow" target="_blank"><strong>🎀VirtualPixelShow</strong></a></p>
+  </footer>
 </body>
 </html>
